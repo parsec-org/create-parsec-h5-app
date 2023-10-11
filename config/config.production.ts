@@ -1,6 +1,5 @@
-import { defineConfig, createBrowserHistory, IRoute } from 'umi';
-import route from './route';
+import { defineConfig } from 'umi';
 
 export default defineConfig({
-  definr
+  definr,
 });

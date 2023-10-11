@@ -1,5 +1,3 @@
 export default () => {
-  return (<div>
-    loading...
-  </div>)
-}
+  return <div>loading...</div>;
+};

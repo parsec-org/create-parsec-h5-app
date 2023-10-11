@@ -9,7 +9,8 @@
     "setup": "umi setup",
     "start": "npm run dev",
     "lint": "umi lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --cache --write ."
   },
   "dependencies": {
     "antd-mobile": "^5.17.2",

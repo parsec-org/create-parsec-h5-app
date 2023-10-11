@@ -1,7 +1,6 @@
 # 扩展的路由配置
 
 ```ts
-
 // config/route.ts
 export const routes: IBestAFSRoute[] = [
   {
@@ -34,6 +33,4 @@ export const routes: IBestAFSRoute[] = [
     flatMenu: true,
   },
 ];
-
-
 ```

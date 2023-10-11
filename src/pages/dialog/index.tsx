@@ -1,21 +1,19 @@
-import React from 'react'
-import { Button, Dialog, Space, Toast, Divider } from 'antd-mobile'
-import DemoBlock from "@/components/DemoBlock";
-import { sleep } from "antd-mobile/es/utils/sleep";
-
+import DemoBlock from '@/components/DemoBlock';
+import { Button, Dialog, Divider, Space, Toast } from 'antd-mobile';
+import { sleep } from 'antd-mobile/es/utils/sleep';
 
 export default () => {
   return (
     <>
-      <DemoBlock title='基础用法'>
-        <Space direction='vertical' block>
+      <DemoBlock title="基础用法">
+        <Space direction="vertical" block>
           <Button
             block
             onClick={() =>
               Dialog.alert({
                 content: '人在天边月上明',
                 onConfirm: () => {
-                  console.log('Confirmed')
+                  console.log('Confirmed');
                 },
               })
             }
@@ -28,7 +26,7 @@ export default () => {
               Dialog.alert({
                 content: '点击遮罩关闭',
                 closeOnMaskClick: true,
-              })
+              });
             }}
           >
             点击遮罩关闭
@@ -36,8 +34,8 @@ export default () => {
         </Space>
       </DemoBlock>
 
-      <DemoBlock title='操作按钮'>
-        <Space direction='vertical' block>
+      <DemoBlock title="操作按钮">
+        <Space direction="vertical" block>
           <Button
             block
             onClick={() => {
@@ -66,12 +64,15 @@ export default () => {
                     },
                   ],
                 ],
-              })
+              });
             }}
           >
             自定义按钮
           </Button>
-          <div>如果你想完全自由地控制按钮区域，那么可以通过 actions 参数来自定义操作按钮，当传入一个二级数组时，可以在同一行内并排放置多个按钮</div>
+          <div>
+            如果你想完全自由地控制按钮区域，那么可以通过 actions
+            参数来自定义操作按钮，当传入一个二级数组时，可以在同一行内并排放置多个按钮
+          </div>
           <Divider />
           <Button
             block
@@ -79,12 +80,12 @@ export default () => {
               Dialog.confirm({
                 content: '是否提交申请',
                 onConfirm: async () => {
-                  await sleep(3000)
+                  await sleep(3000);
                   Toast.show({
                     icon: 'success',
                     content: '提交成功',
                     position: 'bottom',
-                  })
+                  });
                 },
               })
             }
@@ -97,22 +98,25 @@ export default () => {
               Dialog.confirm({
                 content: '是否提交申请',
                 onConfirm: async () => {
-                  await sleep(3000)
+                  await sleep(3000);
                   Toast.show({
                     icon: 'fail',
                     content: '提交失败',
                     position: 'bottom',
-                  })
-                  throw new Error()
+                  });
+                  throw new Error();
                 },
               })
             }
           >
             异步操作执行失败
           </Button>
-          <div>onAction、onConfirm、onCancel、onClick 这些事件函数都支持返回一个 Promise，通过这种方式，可以让按钮在执行异步操作的时候变为加载状态</div>
+          <div>
+            onAction、onConfirm、onCancel、onClick 这些事件函数都支持返回一个
+            Promise，通过这种方式，可以让按钮在执行异步操作的时候变为加载状态
+          </div>
         </Space>
       </DemoBlock>
     </>
-  )
-}
+  );
+};
