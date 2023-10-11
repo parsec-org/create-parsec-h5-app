@@ -1,3 +1,18 @@
+# Ignore artifacts:
+**/*.png
+**/*.svg
+**/*.ico
+.idea
+.git
+.husky
+dist/
+.npmrc
 node_modules
 .umi
 .umi-production
+package.json
+.prettierignore
+.gitignore
+.eslintrc.json
+yarn.lock
+.DS_Store
