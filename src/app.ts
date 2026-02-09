@@ -1,8 +1,9 @@
-import 'antd-mobile/es/global';
-import { ConfigProvider } from 'antd-mobile';
-import React from 'react';
 import type { RuntimeConfig } from '@umijs/max';
+import { ConfigProvider, unstableSetRender } from 'antd-mobile';
+import 'antd-mobile/es/global';
 import zhCN from 'antd-mobile/es/locales/zh-CN';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 //
 // import type { RequestConfig } from 'umi';
 //
@@ -44,14 +45,16 @@ export const rootContainer: RuntimeConfig['rootContainer'] = (container) => {
 /**
  * https://ant-design-mobile.antgroup.com/zh/guide/v5-for-19
  */
-// unstableSetRender((node, container) => {
-//   // @ts-ignore
-//   container._reactRoot ||= createRoot(container);
-//   // @ts-ignore
-//   const root = container._reactRoot;
-//   root.render(node);
-//   return async () => {
-//     await new Promise((resolve) => setTimeout(resolve, 0));
-//     root.unmount();
-//   };
-// });
+unstableSetRender((node, container) => {
+  // @ts-ignore
+  container._reactRoot ||= createRoot(container);
+  // @ts-ignore
+  const root = container._reactRoot;
+  root.render(node);
+  return async () => {
+    await new Promise((resolve) => {
+      setTimeout(resolve, 0);
+    });
+    root.unmount();
+  };
+});

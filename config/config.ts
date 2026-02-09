@@ -16,6 +16,11 @@ export default defineConfig({
     REACT_APP_API_HOST: REACT_APP_API_HOST || '',
   },
   routes: routes,
+  forget: {},
+  mfsu: false,
+  // antdMobile: {
+  //   hd: true,
+  // },
   autoprefixer: {
     overrideBrowserslist: [
       'Android 4.1',
@@ -39,8 +44,10 @@ export default defineConfig({
       mediaQuery: true, // 允许在媒体查询中转换 `px`
     }),
   ],
-  metas:[{
-    name: 'viewport',
-    content: 'width=device-width, initial-scale=1',
-  }]
+  metas: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1',
+    },
+  ],
 });

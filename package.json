@@ -11,12 +11,14 @@
     "lint": "umi lint",
     "prepare": "husky install",
     "format": "prettier --cache --write .",
-    "openapi2ts": "openapi2ts"
+    "openapi2ts": "npx tsx openapi2ts.config.ts"
   },
   "dependencies": {
     "@umijs/max": "^4.6.27",
     "antd-mobile": "^5.42.3",
-    "antd-mobile-icons": "^0.3.0"
+    "antd-mobile-icons": "^0.3.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.29.0",
@@ -26,7 +28,6 @@
     "@types/react-dom": "^19.2.3",
     "@umijs/lint": "^4.6.27",
     "@umijs/openapi": "^1.14.1",
-    "@umijs/plugin-antd-mobile": "^1.2.0",
     "babel-plugin-import": "^1.13.8",
     "cross-env": "^10.1.0",
     "eslint": "^8.57.1",
@@ -44,7 +45,9 @@
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "postcss": "^8.5.6"
+    "postcss": "^8.5.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,less}": [
