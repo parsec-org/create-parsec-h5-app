@@ -1,30 +1,12 @@
-import { Link, Outlet } from 'umi';
-import styles from './index.less';
+import { Outlet } from '@umijs/max';
+import React from 'react';
 
-export default function Layout() {
+const GlobalLayout: React.FC = ()=> {
   return (
-    <div className={styles.navs}>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/docs">Docs</Link>
-        </li>
-        <li>
-          <Link to="/button">button</Link>
-        </li>
-        <li>
-          <Link to="/dialog">dialog</Link>
-        </li>
-        <li>
-          <Link to="/icon">icon</Link>
-        </li>
-        <li>
-          <a href="https://github.com/umijs/umi">Github</a>
-        </li>
-      </ul>
+    <div className='rertrttetete'>
       <Outlet />
     </div>
   );
 }
+
+export default GlobalLayout;

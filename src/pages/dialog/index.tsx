@@ -76,7 +76,7 @@ export default () => {
           <Divider />
           <Button
             block
-            onClick={() =>
+            onClick={() =>{
               Dialog.confirm({
                 content: '是否提交申请',
                 onConfirm: async () => {
@@ -87,14 +87,15 @@ export default () => {
                     position: 'bottom',
                   });
                 },
-              })
+              });
+            }
             }
           >
             异步操作执行成功
           </Button>
           <Button
             block
-            onClick={() =>
+            onClick={() =>{
               Dialog.confirm({
                 content: '是否提交申请',
                 onConfirm: async () => {
@@ -106,7 +107,8 @@ export default () => {
                   });
                   throw new Error();
                 },
-              })
+              });
+            }
             }
           >
             异步操作执行失败

@@ -1,16 +1,21 @@
-import yayJpg from '../assets/yay.jpg';
+import yayJpg from '@/assets/yay.jpg';
+import { Button } from 'antd-mobile'
 
 export default function HomePage() {
   return (
     <div>
       <h2>Yay! Welcome to umi!</h2>
       <p>
-        <img src={yayJpg} width="100%" />
+        <img src={yayJpg} width="100%" alt="" />
       </p>
       <p>
         To get started, edit <code>pages/index.tsx</code> and save to reload.
       </p>
       <div className="text">这里是文本</div>
+      <Button color="primary">Button</Button>
+      <Button block color="primary" size="large">
+        Block Button
+      </Button>
     </div>
   );
 }

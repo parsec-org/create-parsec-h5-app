@@ -1,7 +1,7 @@
 # 扩展的路由配置
 
 ```ts
-// config/route.ts
+// config/routes.ts
 export const routes: IBestAFSRoute[] = [
   {
     path: '/welcome',

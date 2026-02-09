@@ -1,5 +1,5 @@
-import { defineConfig } from 'umi';
-import route from './route';
+import { defineConfig } from '@umijs/max';
+import routes from './routes';
 
 export default defineConfig({
   npmClient: 'yarn',
@@ -7,7 +7,7 @@ export default defineConfig({
   history: {
     type: 'browser',
   },
-  routes: route,
+  routes: routes,
   extraPostCSSPlugins: [
     require('postcss-px-to-viewport')({
       viewportWidth: 375,
