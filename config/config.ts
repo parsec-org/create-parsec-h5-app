@@ -31,6 +31,7 @@ export default defineConfig({
   postcssLoader: {},
   extraPostCSSPlugins: [
     require('postcss-px-to-viewport')({
+      exclude: /antd-mobile/,
       viewportWidth: 375, // 视口宽度，对应设计稿的宽度，一般是 375 或 750
       viewportHeight: 1334, // 视口高度，根据 750 设备的宽度来指定，一般指定 1334 也可以不配置
       unitPrecision: 3, // 指定 `px` 转换为视口单位值的小数位数
