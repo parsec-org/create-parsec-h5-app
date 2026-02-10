@@ -1,10 +1,6 @@
 import { defineConfig } from '@umijs/max';
 import routes from './routes';
 
-const { REACT_APP_ENV, REACT_APP_API_HOST } = process.env;
-
-console.log('REACT_APP_ENV:', REACT_APP_ENV);
-
 export default defineConfig({
   npmClient: 'yarn',
   clientLoader: {}, // 路由数据加载 https://umijs.org/docs/guides/client-loader
@@ -12,8 +8,7 @@ export default defineConfig({
     type: 'browser',
   },
   define: {
-    REACT_APP_ENV: REACT_APP_ENV || false,
-    REACT_APP_API_HOST: REACT_APP_API_HOST || '',
+    //这里存放通用的环境配置信息
   },
   routes: routes,
   forget: {},
@@ -21,6 +16,7 @@ export default defineConfig({
   // antdMobile: {
   //   hd: true,
   // },
+  request: {},
   autoprefixer: {
     overrideBrowserslist: [
       'Android 4.1',

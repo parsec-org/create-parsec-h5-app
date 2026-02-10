@@ -1,17 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "dev": "umi dev",
-    "dev:staging": "umi dev --model staging",
-    "build": "umi build",
-    "build:staging": "cross-env NODE_ENV=staging umi build",
-    "postinstall": "umi setup",
-    "setup": "umi setup",
-    "start": "npm run dev",
-    "lint": "umi lint",
+    "dev": "cross-env max dev",
+    "dev:staging": "cross-env UMI_ENV=staging max dev",
+    "build:production": "cross-env UMI_ENV=production max build",
+    "build:staging": "cross-env UMI_ENV=staging max build",
+    "postinstall": "max setup",
+    "start": "yarn dev",
+    "preview": "max preview",
+    "lint": "max lint",
     "prepare": "husky install",
     "format": "prettier --cache --write .",
-    "openapi2ts": "npx tsx openapi2ts.config.ts"
+    "openapi": "npx tsx openapi2ts.config.ts"
   },
   "dependencies": {
     "@umijs/max": "^4.6.27",
@@ -21,14 +21,12 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.29.0",
     "@commitlint/cli": "^20.4.1",
     "@commitlint/config-conventional": "^20.4.1",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
     "@umijs/lint": "^4.6.27",
     "@umijs/openapi": "^1.14.1",
-    "babel-plugin-import": "^1.13.8",
     "cross-env": "^10.1.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.8",
