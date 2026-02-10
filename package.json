@@ -1,17 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "dev": "umi dev",
+    "dev": "cross-env max dev",
+    "dev:staging": "cross-env UMI_ENV=staging max dev",
     "build:production": "cross-env UMI_ENV=production max build",
     "build:staging": "cross-env UMI_ENV=staging max build",
-    "postinstall": "umi setup",
-    "setup": "umi setup",
-    "start": "npm run dev",
-    "preview": "umi preview",
-    "lint": "umi lint",
+    "postinstall": "max setup",
+    "start": "yarn dev",
+    "preview": "max preview",
+    "lint": "max lint",
     "prepare": "husky install",
     "format": "prettier --cache --write .",
-    "openapi2ts": "npx tsx openapi2ts.config.ts"
+    "openapi": "npx tsx openapi2ts.config.ts"
   },
   "dependencies": {
     "@umijs/max": "^4.6.23",
@@ -34,7 +34,6 @@
     "@umijs/lint": "^4.6.23",
     "@umijs/openapi": "^1.14.1",
     "@umijs/plugin-antd-mobile": "^1.2.0",
-    "@umijs/plugins": "^4.6.27",
     "cross-env": "^10.1.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.8",

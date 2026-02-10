@@ -13,7 +13,6 @@ export default defineConfig({
   routes: routes,
   forget: {},
   clickToComponent: {},
-  plugins: ['@umijs/plugins/dist/request', '@umijs/plugins/dist/layout'],
   layout: false,
   /**
    * @name 数据流插件
