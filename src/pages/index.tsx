@@ -1,4 +1,5 @@
 import yayJpg from '@/assets/yay.jpg';
+import { share } from '@/utils/wx';
 import { history } from '@umijs/max';
 import { Button } from 'antd-mobile';
 
@@ -41,6 +42,23 @@ export default function HomePage() {
       <Button color="primary">Button</Button>
       <Button block color="primary" size="large">
         Block Button
+      </Button>
+      <Button
+        block
+        color="primary"
+        size="large"
+        onClick={() => {
+          share(
+            'ddd',
+            'dddddd',
+            'dddddd',
+            'dddddd',
+            () => {},
+            () => {},
+          );
+        }}
+      >
+        Share
       </Button>
     </div>
   );

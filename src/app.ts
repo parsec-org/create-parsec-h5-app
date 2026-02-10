@@ -1,4 +1,4 @@
-import type { RuntimeConfig } from '@umijs/max';
+import type { RequestConfig, RuntimeConfig } from '@umijs/max';
 import { ConfigProvider, unstableSetRender } from 'antd-mobile';
 import 'antd-mobile/es/global';
 import zhCN from 'antd-mobile/es/locales/zh-CN';
@@ -7,29 +7,42 @@ import { createRoot } from 'react-dom/client';
 //
 // import type { RequestConfig } from 'umi';
 //
-// export const request: RequestConfig = {
-//   timeout: 1000,
-//   // other axios options you want
-//   errorConfig: {
-//     errorHandler(){
-//     },
-//     errorThrower(){
-//     }
-//   },
-//   requestInterceptors: [],
-//   responseInterceptors: []
-// };
-//
+
+export const request: RequestConfig = {
+  timeout: 10000,
+  errorConfig: {
+    errorHandler(error: any) {
+      console.error('请求错误:', error);
+    },
+  },
+  requestInterceptors: [
+    (url: string, options: any) => {
+      // 添加请求头
+      const headers = {
+        ...options.headers,
+        'X-Requested-With': 'XMLHttpRequest',
+      };
+
+      return {
+        url,
+        options: { ...options, headers },
+      };
+    },
+  ],
+  responseInterceptors: [
+    (response: any) => {
+      // 处理响应
+      return response;
+    },
+  ],
+};
+
 // // 在初始加载和路由切换时做一些事情。
 // export function onRouteChange({ location, routes, action }: any) {
 //   console.log('location', location);
 //   console.log('routes', routes);
 //   console.log('action', action);
 //   // bacon(location.pathname);
-// }
-//
-// export function patchRoutes({ routes, routeComponents }: any) {
-//   console.log('patchRoutes', routes, routeComponents);
 // }
 
 export const rootContainer: RuntimeConfig['rootContainer'] = (container) => {

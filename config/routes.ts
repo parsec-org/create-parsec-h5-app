@@ -7,7 +7,7 @@ const routes: any = [
   {
     path: '/',
     layout: false,
-    // component: '@/layouts/index',
+    component: '@/layouts/index',
     routes: [
       {
         path: '/',
